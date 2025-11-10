@@ -1,12 +1,7 @@
 {
   "routes": [
-    { "src": "/", "dest": "/" },
-
-    { "src": "/login", "dest": "/" },
-    { "src": "/signup", "dest": "/" },
-    { "src": "/all-posts", "dest": "/" },
-    { "src": "/add-post", "dest": "/" },
-    { "src": "/edit-post/:slug", "dest": "/" },
-    { "src": "/post/:slug", "dest": "/" }
+    { "handle": "filesystem" },
+    { "src": "^/api/(.*)$", "dest": "/api/$1" },
+    { "src": "^(?!/api/).*$", "dest": "/index.html" }
   ]
 }
